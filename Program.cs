@@ -7,8 +7,9 @@ namespace ATM
     {
         static void Main(string[] args)
         {
-            bool isInvaidCard = true;
-            while (isInvaidCard)
+            bool isInvalidCard = true;
+           
+            while (true)
             {
                 Clear();
                 Write("Card number: ");
@@ -19,9 +20,33 @@ namespace ATM
 
                 string pinCode = ReadLine();
 
+                Clear();
+
                 if (cardNumber == "123456789" && pinCode == "1234")
                 {
-                    isInvaidCard = false;
+                isInvalidCard = false;
+                    while (!isInvalidCard)
+                    {
+                       
+                        WriteLine("1. withdraw");
+                        WriteLine("2. View details");
+                        WriteLine("3. Abort");
+                        ConsoleKeyInfo keyPressed = ReadKey();
+                        switch (keyPressed.Key)
+                        {
+
+                            case ConsoleKey.D1:
+
+                                break;
+                            case ConsoleKey.D2:
+                                break;
+                            case ConsoleKey.D3:
+                                break;
+                        }
+                  
+
+
+                    }
                 }
                 else
                 {
@@ -30,23 +55,8 @@ namespace ATM
                     Thread.Sleep(2000);
                 }
             }
-
-            WriteLine("1. withdraw");
-            WriteLine("2. View details");
-            WriteLine("3. Exit");
-            ConsoleKeyInfo keyPressed = ReadKey();
-            switch (keyPressed.Key)
-            {
-             
-                case ConsoleKey.D1:
-                    break;
-                case ConsoleKey.D2:
-                    break;
-                case ConsoleKey.D3:
-                    break;
-                
-                
-            }
+          
+          
         }
     }
 }
